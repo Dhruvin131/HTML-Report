@@ -39,12 +39,16 @@ html = """
   <div class="square" id="text"></div>
   <div class="square" id="plot"></div>
   <button onclick="loadFile()">Load Report File</button>
+  <button onclick="HeavyloadFile()">Load Heavy Report File</button>
 </div>
 
 <script>
 // Load text file content into the first square
 function loadFile(){
     document.getElementById("text").innerHTML = `""" + open(r"D:\RiverEdge\Py\html-mht\fbreport.txt").read().replace('\n', '<br>') + """`;
+}
+function HeavyloadFile(){
+    document.getElementById("text").innerHTML = `""" + open(r"D:\RiverEdge\Py\html-mht\sample1.txt").read().replace('\n', '<br>') + """`;
 }
 
 // Generate Plotly plot and display in the second square
