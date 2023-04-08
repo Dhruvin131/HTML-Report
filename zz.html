@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Load Text File Example</title>
+  </head>
+  <body>
+    <button onclick="loadFile()">Open File</button>
+    <div id="output"></div>
+
+    <script>
+      function loadFile() {
+        var filePath = "D:\RiverEdge\Py\html-mht\fbreport.txt";
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", filePath);
+        xhr.responseType = "blob";
+        xhr.onload = function() {
+            var reader = new FileReader();
+            reader.onload = function() {
+            var text = reader.result;
+            var output = document.getElementById("output");
+            output.innerText = text;
+            };
+            reader.readAsText(xhr.response);
+        };
+        xhr.send();
+        }
+    </script>
+  </body>
+</html>

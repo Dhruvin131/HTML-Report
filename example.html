@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    display: flex;
+}
+
+.square {
+    width: 50%;
+    height: 400px;
+    padding: 10px;
+    border: 1px solid black;
+    overflow: auto;
+    resize: none;
+}
+
+#text {
+    height: 400px;
+    overflow: auto;
+}
+
+</style>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="square" id="text"></div>
+  <div class="square" id="plot"></div>
+  <button onclick="loadFile()">Load Report File</button>
+</div>
+
+<script>
+// Load text file content into the first square
+function loadFile(){
+    document.getElementById("text").innerHTML = `dasd<br>ada<br>dasda<br>dasdd<br>dasdad<br><br>a<br>d<br>a<br>d<br>a<br>d<br>a<br>da<br>d<br>ad<br>a<br>d<br>d<br>adad<br>dasd<br>ada<br>dasda<br>dasdd<br>dasdad<br><br>a<br>d<br>a<br>d<br>a<br>d<br>a<br>da<br>d<br>ad<br>a<br>d<br>d<br>adad<br>dasd<br>ada<br>dasda<br>dasdd<br>dasdad<br><br>a<br>d<br>a<br>d<br>a<br>d<br>a<br>da<br>d<br>ad<br>a<br>d<br>d<br>adad<br>dasd<br>ada<br>dasda<br>dasdd<br>dasdad<br><br>a<br>d<br>a<br>d<br>a<br>d<br>a<br>da<br>d<br>ad<br>a<br>d<br>d<br>adad<br>`;
+}
+
+// Generate Plotly plot and display in the second square
+var trace = {
+  x: [1, 2, 3],
+  y: [4, 5, 6],
+  type: 'scatter'
+};
+var data = [trace];
+var layout = {
+  title: 'My Plot'
+};
+var fig = {data: data, layout: layout};
+Plotly.newPlot('plot', fig);
+</script>
+
+</body>
+</html>
